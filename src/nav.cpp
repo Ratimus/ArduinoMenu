@@ -271,6 +271,7 @@ void navRoot::idleOn(idleFunc task) {
   #ifdef MENU_IDLE_BKGND
     if (idleTask!=sleepTask) out.idle(idleTask,idleStart);
   #endif
+  isIdle=true;
 }
 
 void navRoot::idleOff() {
@@ -281,6 +282,7 @@ void navRoot::idleOff() {
   sleepTask=NULL;
   active().dirty=true;
   out.clear();
+  isIdle=false;
 }
 
 bool navNode::changed(const menuOut& out) const {

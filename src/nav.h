@@ -73,6 +73,7 @@
 
     class navRoot {
       public:
+        bool isIdle=false;
         outputsList &out;
         menuIn& in;
         navNode* path;

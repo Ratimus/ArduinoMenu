@@ -173,7 +173,7 @@ public:
 
   //this requires latest menu version to virtualize data tables
   prompt& operator[](idx_t i) const override {return *(prompt*)this;}//this will serve both as menu and as its own prompt
-  result sysHandler(SYS_FUNC_PARAMS) override {
+  result sysHandler(eventMask event, navNode& nav, prompt &item) override {
     switch(event) {
       case enterEvent:
         if (nav.root->navFocus!=nav.target) {//on sd card entry

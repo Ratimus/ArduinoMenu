@@ -43,17 +43,17 @@ public:
       case selCmd:
       case idxCmd:
         //MENU_DEBUG_OUT<<"IDX"<<endl;
-        menuField<T>::tunning=true;//prepare for exit
+        menuField<T>::tuning=true;//prepare for exit
         return doNav(nav,cancelFieldOptions::accelSendEsc?escCmd:enterCmd);
       case escCmd:
         editing=!cancelFieldOptions::quitOnEsc;
-        //menuField<T>::tunning=false;
+        //menuField<T>::tuning=false;
         //MENU_DEBUG_OUT<<"ESC"<<endl;
         menuField<T>::target()=original;
         break;
       case enterCmd:
         //MENU_DEBUG_OUT<<"ENTER"<<endl;
-        if (menuField<T>::tunning||nav.root->nav2D||!menuField<T>::tune())
+        if (menuField<T>::tuning||nav.root->nav2D||!menuField<T>::tune())
           editing=false;
         break;
       default: break;

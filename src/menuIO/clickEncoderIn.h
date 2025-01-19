@@ -52,7 +52,7 @@ ex: -A0 means: pin A0 normally high, low when button pushed (reverse logic)
           pos += enc.getValue();
 
           if (btn == ClickEncoder::Open)//do not override previous input
-            btn = enc.getButton();
+            btn = enc.readButtonState();
         }
 
         ClickEncoderStream(ClickEncoder &enc,int sensivity)

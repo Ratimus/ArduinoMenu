@@ -26,7 +26,10 @@ scan a chain of several input streams to provide input
         int available(void) {
           int cnt=0;
           for(int n=0;n<N;n++)
+          {
             cnt+=streams[n]->available();
+          }
+
           return cnt;
         }
         int peek(void) {

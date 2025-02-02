@@ -399,7 +399,6 @@ navCmd navRoot::enter()
     }
     else
     {
-      Serial.println("idle error");
       idleOn(maxDepthError);
       rCmd = noCmd;
     }
